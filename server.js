@@ -11,5 +11,5 @@ const server = http.createServer((req, res) => {
 
 server.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
-  setInterval(() => console.log(`some random number ${Math.random()}`), 10000);
+  setInterval(() => console.log(`some random number and updated ${Math.random()}`), 10000);
 });
