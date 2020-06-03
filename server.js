@@ -4,7 +4,7 @@ dotenv.config();
 
 // if you want to run locally change port to 3000
 // for Apphosting use port 80
-const PORT = 8009;
+const PORT = 80;
 
 // to deploy it to AppHosting please use IP:0.0.0.0
 const HOST = '0.0.0.0';
