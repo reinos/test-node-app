@@ -1,19 +1,15 @@
-const express = require("express");
-const dotenv = require("dotenv");
-dotenv.config();
+const http = require('http');
 
-// if you want to run locally change port to 3000
-// for Apphosting use port 80
-const PORT = 80;
+const hostname = '0.0.0.0';
+const port = 80;
 
-// to deploy it to AppHosting please use IP:0.0.0.0
-const HOST = '0.0.0.0';
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
 
-// App
-const app = express();
-app.get('/', (req, res) => res.send('Hello World!'));
-
-app.listen(PORT, HOST, () => {
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
   setInterval(() => console.log(`some random number ${Math.random()}`), 1000);
-  console.log(`Running on http://${HOST}:${PORT}`)
 });
